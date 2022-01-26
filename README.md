@@ -1,4 +1,3 @@
-# Learning
+# Learning Java and repetition
 ---
-| Trying out github.
-| Mainly code in C#, Python and some Webb!
+| All ideas for projects are welcome!
