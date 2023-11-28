@@ -10,7 +10,7 @@ on:
       - main
       - 'rc/*'
     paths:
-      - 'java/**'
+      - 'csharp/**'
       - '.github/codeql/**'
       - '.github/workflows/codeql-analysis.yml'
   schedule:
@@ -40,13 +40,13 @@ jobs:
       uses: github/codeql-action/init@v4
       # Override language selection by uncommenting this and choosing your languages
       with:
-        languages: java
+        languages: csharp
         config-file: ./.github/codeql/codeql-config.yml
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v4
+    #- name: Autobuild
+    #  uses: github/codeql-action/autobuild@v4
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -55,8 +55,8 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    #- run: |
-    #   dotnet build csharp
+    - run: |
+       dotnet build csharp
 
-    #- name: Perform CodeQL Analysis
-    #  uses: github/codeql-action/analyze@main
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@main
